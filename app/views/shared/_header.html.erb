@@ -23,7 +23,7 @@
             <% end %>
             <% if user_signed_in? %>
             
-            <ul class="nav navbar-nav navbar-right">
+            <ul class="navbar-right signed-in-user">
                 <li>
                   <p class='navbar-text'>
                   Signed in as <%= "#{current_user.email}"%>
@@ -38,5 +38,5 @@
         </div> 
     </nav>
     <br>
-    <%= yield %>
+   
 </div>
