@@ -30,10 +30,15 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'pg'
 
+
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '3.5.1'
+  gem 'guard'
+  gem 'guard-rspec', '~> 4.7.2'
+  gem 'guard-cucumber', '~> 2.1.2'
 end
 
 group :development do

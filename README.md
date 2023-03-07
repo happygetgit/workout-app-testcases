@@ -19,6 +19,24 @@ when a user visits the home page , user wants to see 4 things:
 
 Call the controller DashboardsController
 
+Task-2:
+
+add guard and cucumber to the project 
+
+Deatils:
+========
+
+1. add the below gems in gem file:
+        . gem guard
+        . gem 'guard-rspec', '~> 4.7.2'
+        . gem 'guard-cucumber', '~> 2.1.2'
+2. bundle install
+3. guard init rspec
+4. cucumber --init
+4. guard --> this command will enter into the guard if the process done properly
+
+
+
 
 
 
