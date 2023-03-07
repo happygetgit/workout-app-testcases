@@ -30,6 +30,8 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'pg'
 
+gem 'bootstrap-sass', '~>3.3.6'
+
 
 
 group :development, :test do
