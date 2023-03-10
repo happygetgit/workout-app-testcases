@@ -35,6 +35,36 @@ Deatils:
 4. cucumber --init
 4. guard --> this command will enter into the guard if the process done properly
 
+Task-3:
+
+Excercise Management:
+=====================
+
+1. User to sign in
+2. Upon successful sign in, user can click on a link "My Lounge" to go to an area that shows the details of his/her workouts.
+3. User can then click on another link(to be styled as a button).
+4. User can fill out a form with the detailsof workout.
+5. Alternatively, user can click on a link to go the lounge. 
+
+Excercise Facts:
+=================
+1. Has a duration in minutes
+2. Working details (essentially a description of the activity)
+3. Date of the activity
+4. Can only exist in the context of a user (excercise must be owned by the user)
+
+Excercise expectations upon creation:
+1. The new excercise's user_id has to be same as the logged in user's
+2. The current page should be the excercise's show page
+ 
+
+
+be prepare on the topic and say with confidence.
+10 customer details. 
+can u elaborate the question. 
+can u explain the 
+core knowledge and 
+
 
 
 
