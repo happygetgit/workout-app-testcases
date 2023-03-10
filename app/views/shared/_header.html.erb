@@ -24,6 +24,7 @@
             <% if user_signed_in? %>
             
             <ul class="navbar-right signed-in-user">
+                <li><%= link_to "My Lounge", user_exercises_path(current_user) %> </li>
                 <li>
                   <p class='navbar-text'>
                   Signed in as <%= "#{current_user.email}"%>
