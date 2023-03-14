@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
-  belongs_to :user
+  belongs_to :user, optional: true
 
   alias_attribute :workout_details, :workout
   alias_attribute :activity_date, :workout_date

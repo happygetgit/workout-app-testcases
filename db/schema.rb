@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2023_03_10_103439) do
   enable_extension "plpgsql"
 
   create_table "exercises", force: :cascade do |t|
-    t.bigint "user_id", null: false
+    t.bigint "user_id"
     t.integer "duration_in_min"
     t.text "workout"
     t.datetime "workout_date"
