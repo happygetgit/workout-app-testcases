@@ -16,12 +16,12 @@ RSpec.feature "Creating Excercise" do
         fill_in "Duration", with: 70
         fill_in "Workout Details", with: "Weight Lifting"
         fill_in "Activity Date", with: "2016-07-26"
-        click_button "Create Excercise"
+        click_button "Create Exercise"
 
-        expect(page).to have_content("Excercise has been created")
+        expect(page).to have_content("Exercise has been created")
 
-        excercise = Excercise.last
-        expect(current_path).to eq(user_excercise_path(@john, excercise))
+        excercise = Exercise.last
+        expect(current_path).to eq(user_exercise_path(@john, excercise))
         expect(excercise.user_id).to eq(@john.id)
     end
 
