@@ -1,3 +1,12 @@
+<% # Importing D3.js %>
+<script src="https://d3js.org/d3.v5.min.js" charset="utf-8" defer></script>
+
+<% #Importing D3-Scale  %>
+<script src="https://d3js.org/d3-scale.v3.min.js"></script>
+
+<% #Connecting my JS file %>
+<script src="exercise.js" defer></script>
+
 <div class="col-md-8 col-xs-12">
     <% unless @exercises.empty? %>
         <h1>Listing Exercises</h1>
@@ -33,4 +42,9 @@
         <br>
     <% end %>
     <%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success link" %>
+
+    
 </div>
+
+
+<%= content_tag :div, "", id: 'chart', data: { workouts: @exercises}  %>
