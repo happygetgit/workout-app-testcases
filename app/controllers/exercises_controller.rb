@@ -1,5 +1,5 @@
 class ExercisesController < ApplicationController
-    before_action :set_exercise, only: [:show, :edit, :update, :destroy]
+    before_action :set_exercise, only: [ :edit, :update, :destroy]
     def index
         @exercises = current_user.exercises
     end
@@ -10,7 +10,6 @@ class ExercisesController < ApplicationController
 
     def create
         @exercise = current_user.exercises.new(exercise_params)
-
         if @exercise.save
             flash[:notice] = "Exercise has been created"
             #redirect_to user_exercises_path(current_user, @exercise)
@@ -22,6 +21,7 @@ class ExercisesController < ApplicationController
     end
 
     def show
+        @exercise = current_user.exercises.find params[:id]
     end
 
     def edit
@@ -46,12 +46,14 @@ class ExercisesController < ApplicationController
 
     private
 
+    def exercise_params
+        params.require(:exercise).permit(:duration_in_min, :workout, :workout_date, :user_id)
+    end
+
     def set_exercise
         @exercise = current_user.exercises.find params[:id]
     end
 
-    def exercise_params
-        params.require(:exercise).permit(:duration_in_min, :workout, :workout_date, :user_id)
-    end
+    
 
 end
