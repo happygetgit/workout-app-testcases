@@ -15,6 +15,14 @@
             <ul class="nav navbar-nav">
               <li class="active"><%= link_to "Home", root_path %> </li>
             </ul>
+            <%= form_tag(search_dashboards_path,
+                          class: "navbar-form navbar-left",
+                          role: "search") do %>
+              <div class="form-group">
+                  <%= text_field_tag :search_name, nil, placeholder: "Search for friends", class: "form-control" %>
+              </div>
+              <%= submit_tag "Search", class: 'btn btn-default'%>
+            <% end %>
             <% unless user_signed_in? %>
               <ul class="nav navbar-nav navbar-right">
                 <li><%= link_to "Signup", new_user_registration_path %> </li>
