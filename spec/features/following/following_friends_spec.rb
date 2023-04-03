@@ -10,6 +10,7 @@ RSpec.feature "Folowing Friends" do
                             last_name: "Doe",
                             email: "sarah@example.com",
                             password: "password")
+        login_as(@john)
     end
 
     scenario "if signed in" do
