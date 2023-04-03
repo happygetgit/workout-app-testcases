@@ -10,7 +10,7 @@
 <div class="col-md-8 col-xs-12">
     <% unless @exercises.empty? %>
         <h1>Listing Exercises</h1>
-
+        <%= will_paginate @exercises, renderer: BootstrapPagination::Rails, class: "pull-left paginate" %>
         <table class="table table-striped">
             <thead>
                 <tr>
