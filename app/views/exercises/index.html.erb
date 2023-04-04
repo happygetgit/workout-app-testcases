@@ -6,7 +6,7 @@
 
 <% #Connecting my JS file %>
 
-
+<% content_for(:whole_page) do %>
 <div class="col-md-8 col-xs-12">
     <% unless @exercises.empty? %>
         <h1>Listing Exercises</h1>
@@ -42,18 +42,17 @@
         <br>
     <% end %>
     <%= link_to "New Workout", new_user_exercise_path(current_user), class: "btn btn-success link" %>
-
+    <%= content_tag :div, "", id: 'chart', data: { workouts: @exercises}  %>
     
 </div>
 
 
-<%= content_tag :div, "", id: 'chart', data: { workouts: @exercises}  %>
+
 
 
 <div class="col-md-4 col-xs-12">
     <div id="chat-window">
-        <header><%= current_room.name %></header>
-
+        <header class="text-center"><%= current_room.name %></header>
         <div class="col-md-2" id="followers">
             <% @followers.each do |follower| %>
                 <%= link_to follower.user.full_name, user_exercises_path(current_user, roomId: follower.user.room.id), class: 'followers' %>
@@ -92,3 +91,4 @@
     </div>
     <% end %>
 </div>
+<% end %>
