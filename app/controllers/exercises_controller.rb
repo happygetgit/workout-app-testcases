@@ -3,6 +3,10 @@ class ExercisesController < ApplicationController
     def index
         @exercises = current_user.exercises.paginate(:page => params[:page])
         @friends = current_user.friends
+        set_current_room
+        @message = Message.new
+        @messages = current_room.messages if current_room
+        @followers = Friendship.where(friend_id: current_user.id)
     end
 
     def new
@@ -55,6 +59,13 @@ class ExercisesController < ApplicationController
         @exercise = current_user.exercises.find params[:id]
     end
 
-    
+    def set_current_room
+        if params[:roomId]
+            @room = Room.find_by(id: params[:roomId])
+        else
+            @room = current_user.room
+        end
+        session[:current_room] = @room.id if @room
+    end
 
 end

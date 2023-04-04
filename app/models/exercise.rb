@@ -11,4 +11,6 @@ class Exercise < ApplicationRecord
   self.per_page = 10
   #default_scope {where('workout_date > ?', 7.days.ago).order(workout_date: :desc)}
 
+  
+
 end
