@@ -5,7 +5,7 @@
 <script src="https://d3js.org/d3-scale.v3.min.js"></script>
 
 <% #Connecting my JS file %>
-<script src="exercise.js" defer></script>
+
 
 <div class="col-md-8 col-xs-12">
     <% unless @exercises.empty? %>
@@ -48,6 +48,7 @@
 
 
 <%= content_tag :div, "", id: 'chart', data: { workouts: @exercises}  %>
+
 
 <div class="col-md-4 col-xs-12">
     <h1 class="text-center">My Friends</h1>

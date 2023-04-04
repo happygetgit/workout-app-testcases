@@ -4,7 +4,7 @@ jQuery(function() {
 
 var regex = /\/users\/\d+\/exercises$/i;
 
- 
+
 if($(location).attr('pathname').match(regex)) {
     drawChart();
   }
@@ -15,7 +15,7 @@ var drawChart = function() {
       height = 450 - margin.top - margin.bottom;
 
   var JSONData = $("#chart").data("workouts");
- 
+
   if (!JSONData) {
     return;
   }
