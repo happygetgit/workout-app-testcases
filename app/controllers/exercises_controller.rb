@@ -2,6 +2,7 @@ class ExercisesController < ApplicationController
     before_action :set_exercise, only: [ :edit, :update, :destroy]
     def index
         @exercises = current_user.exercises.paginate(:page => params[:page])
+        @friends = current_user.friends
     end
 
     def new
