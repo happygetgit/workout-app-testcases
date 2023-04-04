@@ -1,3 +1,44 @@
+Actioncable connection setting:
+app/channels/application_cable/connection.rb
+============================================
+
+class Connection < ActionCable::Connection::Base
+    identified_by :current_user
+
+    def connect
+      self.current_user = find_current_user
+    end
+
+    def disconnect
+    end
+
+    protected
+
+    def find_current_user
+      if current_user == User.find_by(id: cookies.signed['user.id'])
+        current_user
+      else
+        reject_unauthorized_connection
+      end
+    end
+
+  end
+
+config/initializers:
+=======================
+Warden::Manager.after_set_user do |user, auth, opts|
+    scope = opts[:scope]
+    auth.cookies.signed["#{scope}.id"] = user.id
+end
+
+Warden::Manager.after_set_user do |user, auth, opts|
+    scope = opts[:scope]
+    auth.cookies.signed["#{scope}.id"] = nil
+end
+
+routes.rb:
+====================
+mount ActionCable.server => '/cable'
 
 
 Task-1 :
